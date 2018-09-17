@@ -59,9 +59,9 @@ public class BasicStack<X> {
         stack.push("Ashish3");
         stack.push("Ashish4");
         stack.push("Ashish5");
-
+        System.out.println(stack.contains("Ashish"));
         stack.pop();
-        for (int i =0;i<stack.size();i++) {
+        while(stack.size() > 0){
             System.out.println(stack.pop());
         }
 
