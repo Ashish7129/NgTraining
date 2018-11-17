@@ -1,0 +1,53 @@
+import java.util.Date;
+
+public class UserInput {
+	private String arrLoc;
+	private String desLoc;
+	private Date validTill;
+	private String flightClass;
+	private int outputPrefer;
+	
+	public String getArrLoc() {
+		return arrLoc;
+	}
+
+	public String getDesLoc() {
+		return desLoc;
+	}
+
+	public Date getValidTill() {
+		return validTill;
+	}
+
+	public String getFlightClass() {
+		return flightClass;
+	}
+
+	public int getOutputPrefer() {
+		return outputPrefer;
+	}
+	/**
+	 * @param arrLoc
+	 * @param desLoc
+	 * @param validTill
+	 * @param flightClass
+	 * @param outputPrefer
+	 */
+	public UserInput(String arrLoc, String desLoc, Date validTill, String flightClass, int outputPrefer) {
+		super();
+		this.arrLoc = arrLoc;
+		this.desLoc = desLoc;
+		this.validTill = validTill;
+		this.flightClass = flightClass;
+		this.outputPrefer = outputPrefer;
+	}
+
+	@Override
+	public String toString() {
+		return "UserInput [arrLoc=" + arrLoc + ", desLoc=" + desLoc + ", validTill=" + validTill + ", flightClass="
+				+ flightClass + ", outputPrefer=" + outputPrefer + "]";
+	}
+	
+
+
+}

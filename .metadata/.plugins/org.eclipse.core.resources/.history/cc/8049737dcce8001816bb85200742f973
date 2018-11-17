@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException{
+		
+		List<Flight> results = new ArrayList<>();
+		UserInput ui =  InputAcceptor.enterData();
+		System.out.println(ui);
+		DirectoryReader.readDir("data");
+		while(true) {
+		results.clear();
+		Watcher.watcher(DirectoryReader.flightInfo);
+		for(HashSet<Flight> flight_data : DirectoryReader.flightInfo.values()) {
+			for (Flight data:flight_data) {
+				if(data.getDepLoc().equalsIgnoreCase(ui.getDepLoc())&
+					data.getArrLoc().equalsIgnoreCase(ui.getArrLoc())&
+					data.getFlightClass().equalsIgnoreCase(ui.getFlightClass())&
+					data.getValidTill().equals(ui.getValidTill()))
+				results.add(data);
+			}
+		}
+		if(ui.getOutputPrefer()== 1) {
+			Collections.sort(results,new FlightPriceComparator());
+		}
+		else {
+			Collections.sort(results, new FlightDurationComparator());
+		}
+		System.out.println("FLIGHT_NO | DEP_LOC | ARR_LOC | VALID_TILL | FLIGHT_TIME | FLIGHT_DUR | FARE | SEAT_AVAILABILITY | CLASS\r");
+		for (Flight f : results) {
+			System.out.println(f);
+		}
+	}}
+
+}

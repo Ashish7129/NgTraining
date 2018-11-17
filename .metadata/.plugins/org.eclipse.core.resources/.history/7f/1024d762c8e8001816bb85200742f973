@@ -1,0 +1,25 @@
+
+
+public class Watcher {
+//	// Creating the map of flight Data
+//	//Map<Integer,Flight> data = new HashMap<>(); 
+//	try(WatchService watchService =  FileSystems.getDefault().newWatchService()){
+//	//Map<WatchKey,Path> keyMap = new HashMap<>();
+//	Path directory = Paths.get("data");
+//	//Files.list(directory);
+//	WatchKey watchkey = directory.register(watchService,
+//			StandardWatchEventKinds.ENTRY_CREATE,
+//			StandardWatchEventKinds.ENTRY_DELETE,
+//			StandardWatchEventKinds.ENTRY_MODIFY);
+//	while(true) {
+//		for (WatchEvent<?> event:watchkey.pollEvents()) {
+//			System.out.println(event.kind());
+//			Path file =  directory.resolve((Path) event.context());
+//			System.out.println(file);
+//		
+//		}
+//	}
+//	}catch (Exception e) {
+//		// TODO: handle exception
+//	}
+}

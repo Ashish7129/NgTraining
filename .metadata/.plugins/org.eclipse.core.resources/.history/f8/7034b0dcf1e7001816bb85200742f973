@@ -1,0 +1,75 @@
+
+
+public class Flight {
+	private int flightNo;
+	private String depLoc;
+	private String arrLoc;
+	private String validTill;
+	private String flightTime;
+	private String flightDuration;
+	private int fare;
+	private char seatAvailability;
+	private String flightClass;
+	
+	public Flight(int fLIGHT_NO, String dEP_LOC, String aRR_LOC, String vALID_TILL, String fLIGHT_TIME,
+			String fLIGHT_DUR, int fARE, char sEAT_AVAILABILITY, String cLASS) {
+		super();
+		this.flightNo = fLIGHT_NO;
+		this.depLoc = dEP_LOC;
+		this.arrLoc = aRR_LOC;
+		this.validTill = vALID_TILL;
+		this.flightTime = fLIGHT_TIME;
+		this.flightDuration = fLIGHT_DUR;
+		this.fare = fARE;
+		this.seatAvailability= sEAT_AVAILABILITY;
+		this.flightClass = cLASS;
+	}
+
+
+
+	public int getFLIGHT_NO() {
+		return flightNo;
+	}
+
+	public void setFLIGHT_NO(int fLIGHT_NO) {
+		flightNo = fLIGHT_NO;
+	}
+
+	public String getDEP_LOC() {
+		return depLoc;
+	}
+
+	public String getARR_LOC() {
+		return arrLoc;
+	}
+
+	public String getVALID_TILL() {
+		return validTill;
+	}
+
+	public String getFLIGHT_TIME() {
+		return flightTime;
+	}
+
+	public String getFLIGHT_DUR() {
+		return flightDuration;
+	}
+
+	public int getFARE() {
+		return fare;
+	}
+
+
+	public char getSEAT_AVAILABILITY() {
+		return seatAvailability;
+	}
+
+
+	public String getCLASS() {
+		return flightClass;
+	}
+
+	
+	@Override
+	public String toString() {return "Hello"+ getFLIGHT_NO();}
+}

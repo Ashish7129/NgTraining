@@ -1,0 +1,9 @@
+com\nagarro\input\DirectoryReader.class
+com\nagarro\input\InputAcceptor.class
+com\nagarro\input\InputValidator.class
+com\nagarro\model\FlightDurationComparator.class
+com\nagarro\model\UserInput.class
+com\nagarro\mainController\Watcher.class
+com\nagarro\model\FlightPriceComparator.class
+com\nagarro\model\Flight.class
+com\nagarro\mainController\Main.class

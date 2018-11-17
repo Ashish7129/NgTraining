@@ -1,0 +1,22 @@
+
+public class Flight {
+	private int FLIGHT_NO;
+	private String DEP_LOC;
+	private 
+	public int getFLIGHT_NO() {
+		return FLIGHT_NO;
+	}
+
+	public void setFLIGHT_NO(int fLIGHT_NO) {
+		FLIGHT_NO = fLIGHT_NO;
+	}
+
+	public String getDEP_LOC() {
+		return DEP_LOC;
+	}
+
+	public void setDEP_LOC(String dEP_LOC) {
+		DEP_LOC = dEP_LOC;
+	}
+	
+}

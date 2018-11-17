@@ -1,0 +1,75 @@
+import java.io.*;
+import java.nio.file.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+public class DirectoryReader {
+	final static SimpleDateFormat dateformat = new SimpleDateFormat("dd-MM-yyyy");
+	public static HashMap<String,HashSet<Flight>> flightInfo = new HashMap<>();
+	public static void readDir(String directory) {
+		HashSet<Flight> flight_set;
+		try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(Paths.get(directory))) {
+            for (Path path : directoryStream) {
+            	flight_set= readFile(path.toString());
+                flightInfo.put(path.toString(), flight_set);
+            }
+        } catch (IOException ex) {}
+		System.out.println("Read All CSV Files");
+	}
+	
+	public static HashSet<Flight> readFile(String file) {
+		BufferedReader reader = null;
+		HashSet<Flight> flight_Set = new HashSet<>();
+		try {
+			reader = new BufferedReader(new FileReader(file));
+			String line = reader.readLine();
+			line = reader.readLine();
+			while(line != null)
+			{
+				Flight f = manipulateLine(line);
+				line = reader.readLine();
+				flight_Set.add(f);
+				
+			}
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+		return flight_Set;
+		
+	}
+
+	private static Flight manipulateLine(String line) {
+		StringTokenizer st = new StringTokenizer(line, "|");
+
+		String flightNo = st.nextToken();
+		String depLoc = st.nextToken();
+		String arrLoc = st.nextToken();
+
+		String validTillDate = st.nextToken();
+		Date validTill = new Date();
+		try {
+			validTill = dateformat.parse(validTillDate);
+		} catch (ParseException e) {
+			System.err.print("Date not in appropriate(dd-MM-yyyy) format");
+		}
+
+		String flightTime = st.nextToken();
+		Double flightDuration = Double.parseDouble(st.nextToken());
+		int fare = Integer.parseInt(st.nextToken());
+
+		String avail = st.nextToken();
+		Boolean seatAvailability;
+		if (avail.charAt(0) == 'Y')
+			seatAvailability = true;
+		else
+			seatAvailability = false;
+
+		String flightClass = st.nextToken();
+
+		return new Flight(flightNo, depLoc, arrLoc, fare, validTill,
+				flightTime, flightDuration, seatAvailability, flightClass);
+	}
+	
+}

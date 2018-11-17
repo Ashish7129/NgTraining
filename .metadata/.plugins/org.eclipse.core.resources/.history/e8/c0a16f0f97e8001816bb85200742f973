@@ -1,0 +1,7 @@
+
+public class InputAcceptor {
+public static UserInput enterData() {
+	
+}
+
+}

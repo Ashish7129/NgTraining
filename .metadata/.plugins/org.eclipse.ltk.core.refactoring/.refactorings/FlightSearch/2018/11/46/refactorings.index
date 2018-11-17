@@ -1,0 +1,13 @@
+1542174855303	Rename type 'main'
+1542175042014	Encapsulate field 'FLIGHT_NO'
+1542175129754	Encapsulate field 'DEP_LOC'
+1542175181469	Encapsulate field 'ARR_LOC'
+1542175348316	Encapsulate field 'VALID_TILL'
+1542175648755	Encapsulate field 'FLIGHT_TIME'
+1542175654357	Encapsulate field 'FLIGHT_DUR'
+1542175660758	Encapsulate field 'FARE'
+1542175677130	Encapsulate field 'SEAT_AVAILABILITY'
+1542175684697	Encapsulate field 'CLASS'
+1542299831872	Rename resource 'luftansa.csv'
+1542359271793	Delete element
+1542364821377	Rename local variable 'flight_Set'

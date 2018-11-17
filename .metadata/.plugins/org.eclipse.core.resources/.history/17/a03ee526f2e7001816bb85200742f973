@@ -1,0 +1,83 @@
+
+
+public class Flight {
+	private int flightNo;
+	private String depLoc;
+	private String arrLoc;
+	private String validTill;
+	private String flightTime;
+	private String flightDuration;
+	private int fare;
+	private char seatAvailability;
+	private String flightClass;
+	
+
+
+	
+	@Override
+	public String toString() {return "Hello";}
+
+
+
+
+	public int getFlightNo() {
+		return flightNo;
+	}
+
+
+
+
+	public String getDepLoc() {
+		return depLoc;
+	}
+
+
+
+
+	public String getArrLoc() {
+		return arrLoc;
+	}
+
+
+
+
+	public String getValidTill() {
+		return validTill;
+	}
+
+
+
+
+	public String getFlightTime() {
+		return flightTime;
+	}
+
+
+
+
+	public String getFlightDuration() {
+		return flightDuration;
+	}
+
+
+
+
+	public int getFare() {
+		return fare;
+	}
+
+
+
+
+	public char getSeatAvailability() {
+		return seatAvailability;
+	}
+
+
+
+
+	public String getFlightClass() {
+		return flightClass;
+	}
+
+}

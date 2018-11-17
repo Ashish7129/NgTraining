@@ -1,0 +1,104 @@
+
+
+public class Flight {
+	private int flightNo;
+	private String depLoc;
+	private String arrLoc;
+	private String validTill;
+	private String flightTime;
+	private String flightDuration;
+	private int fare;
+	private char seatAvailability;
+	private String flightClass;
+	
+	public Flight(int fLIGHT_NO, String dEP_LOC, String aRR_LOC, String vALID_TILL, String fLIGHT_TIME,
+			String fLIGHT_DUR, int fARE, char sEAT_AVAILABILITY, String cLASS) {
+		super();
+		this.flightNo = fLIGHT_NO;
+		this.depLoc = dEP_LOC;
+		this.arrLoc = aRR_LOC;
+		this.validTill = vALID_TILL;
+		this.flightTime = fLIGHT_TIME;
+		this.flightDuration = fLIGHT_DUR;
+		this.fare = fARE;
+		this.seatAvailability= sEAT_AVAILABILITY;
+		this.flightClass = cLASS;
+	}
+
+
+
+	public int getFLIGHT_NO() {
+		return flightNo;
+	}
+
+	public void setFLIGHT_NO(int fLIGHT_NO) {
+		flightNo = fLIGHT_NO;
+	}
+
+	public String getDEP_LOC() {
+		return depLoc;
+	}
+
+	public void setDEP_LOC(String dEP_LOC) {
+		depLoc = dEP_LOC;
+	}
+
+	public String getARR_LOC() {
+		return arrLoc;
+	}
+
+	public void setARR_LOC(String aRR_LOC) {
+		arrLoc = aRR_LOC;
+	}
+
+	public String getVALID_TILL() {
+		return validTill;
+	}
+
+	public void setVALID_TILL(String vALID_TILL) {
+		validTill = vALID_TILL;
+	}
+
+	public String getFLIGHT_TIME() {
+		return flightTime;
+	}
+
+	public void setFLIGHT_TIME(String fLIGHT_TIME) {
+		flightTime = fLIGHT_TIME;
+	}
+
+	public String getFLIGHT_DUR() {
+		return flightDuration;
+	}
+
+	public void setFLIGHT_DUR(String fLIGHT_DUR) {
+		flightDuration = fLIGHT_DUR;
+	}
+
+	public int getFARE() {
+		return fare;
+	}
+
+	public void setFARE(int fARE) {
+		fare = fARE;
+	}
+
+	public char getSEAT_AVAILABILITY() {
+		return seatAvailability;
+	}
+
+	public void setSEAT_AVAILABILITY(char sEAT_AVAILABILITY) {
+		seatAvailability = sEAT_AVAILABILITY;
+	}
+
+	public String getCLASS() {
+		return flightClass;
+	}
+
+	public void setCLASS(String cLASS) {
+		flightClass = cLASS;
+	}
+	
+	@Override
+	public String toString() {return "Hello"+ getFLIGHT_NO();}
+}

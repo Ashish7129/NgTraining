@@ -1,0 +1,19 @@
+
+
+public class Flight {
+	private int flightNo;
+	private String depLoc;
+	private String arrLoc;
+	private String validTill;
+	private String flightTime;
+	private String flightDuration;
+	private int fare;
+	private char seatAvailability;
+	private String flightClass;
+	
+
+
+	
+	@Override
+	public String toString() {return "Hello";}
+}

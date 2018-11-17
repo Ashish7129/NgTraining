@@ -1,0 +1,59 @@
+import java.util.Date;
+
+public class Flight {
+	private int flightNo;
+	private String depLoc;
+	private String arrLoc;
+	private Date validTill;
+	private String flightTime;
+	private Double flightDuration;
+	private int fare;
+	private char seatAvailability;
+	private String flightClass;
+	
+
+	public int getFlightNo() {
+		return flightNo;
+	}
+
+	public String getDepLoc() {
+		return depLoc;
+	}
+
+	public String getArrLoc() {
+		return arrLoc;
+	}
+
+	public Date getValidTill() {
+		return validTill;
+	}
+
+	public String getFlightTime() {
+		return flightTime;
+	}
+
+	public Double getFlightDuration() {
+		return flightDuration;
+	}
+
+	public int getFare() {
+		return fare;
+	}
+
+	public char getSeatAvailability() {
+		return seatAvailability;
+	}
+
+	public String getFlightClass() {
+		return flightClass;
+	}
+
+
+
+	
+	@Override
+	public String toString() {return "Hello";}
+
+
+
+}

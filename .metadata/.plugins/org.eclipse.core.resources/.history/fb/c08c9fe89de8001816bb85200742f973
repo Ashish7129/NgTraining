@@ -1,0 +1,41 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class InputAcceptor {
+public static UserInput enterData() {
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	final SimpleDateFormat dateformat = new SimpleDateFormat("dd-MM-yyyy");
+	String source, destination,flightClass;
+	Date travelDate;
+	int outputPreference;
+	try {
+	System.out.println("Departure Location :");
+	//while(true) {}
+	source = br.readLine();
+	System.out.println("Arrival Location :");
+	//while(false) {}
+	destination = br.readLine();
+	System.out.println("Travel Date :");
+	//while(){}
+	travelDate = dateformat.parse(br.readLine());
+	System.out.println("Class :");
+	//while(){}
+	flightClass = br.readLine().toUpperCase();
+	System.out.println("Output Preference :");
+	outputPreference = Integer.parseInt(br.readLine());
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	catch (ParseException e) {
+		System.err.print("Date not in appropriate(dd-MM-yyyy) format, Enter Again: ");
+	}
+	return new UserInput(source, destination, travelDate, flightClass, outputPreference);
+	
+}
+
+}

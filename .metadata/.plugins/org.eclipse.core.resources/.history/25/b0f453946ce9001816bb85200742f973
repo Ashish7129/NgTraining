@@ -1,0 +1,32 @@
+package com.nagarro.input;
+
+import java.util.Date;
+
+public class InputValidator {
+
+	public static String ValidateSource(String readLine) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static String ValidateDestination(String readLine) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static Date ValidateDate(String readLine) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static String ValidateClass(String readLine) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static int ValidatePreference(String readLine) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+}

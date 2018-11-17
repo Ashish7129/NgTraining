@@ -1,0 +1,41 @@
+import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardWatchEventKinds;
+import java.nio.file.WatchEvent;
+import java.nio.file.WatchKey;
+import java.nio.file.WatchService;
+import java.util.ArrayList;
+//import java.util.HashMap;
+//import java.util.Map;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException{
+		// Creating the map of flight Data
+		//Map<Integer,Flight> data = new HashMap<>(); 
+		List<String> files = new ArrayList<>();
+		try(WatchService watchService =  FileSystems.getDefault().newWatchService()){
+		//Map<WatchKey,Path> keyMap = new HashMap<>();
+		Path directory = Paths.get("data");
+		 Files.list(directory).forEach(System.out::println);
+		WatchKey watchkey = directory.register(watchService,
+				StandardWatchEventKinds.ENTRY_CREATE,
+				StandardWatchEventKinds.ENTRY_DELETE,
+				StandardWatchEventKinds.ENTRY_MODIFY);
+		while(true) {
+			for (WatchEvent<?> event:watchkey.pollEvents()) {
+				System.out.println(event.kind());
+				Path file =  directory.resolve((Path) event.context());
+				System.out.println(file);
+			}
+		}
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+}

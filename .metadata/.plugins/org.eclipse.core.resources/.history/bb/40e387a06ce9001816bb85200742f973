@@ -1,0 +1,39 @@
+package com.nagarro.input;
+import com.nagarro.model.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class InputAcceptor {
+public static UserInput enterData() {
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	final SimpleDateFormat dateformat = new SimpleDateFormat("dd-MM-yyyy");
+	String source = null, destination =null,flightClass=null;
+	Date travelDate = null;
+	int outputPreference = 0;
+	try {
+	System.out.println("Departure Location :");
+	while((source = InputValidator.ValidateSource(br.readLine()))==null) {continue;}
+	
+	System.out.println("Arrival Location :");
+	while((destination = InputValidator.ValidateDestination(br.readLine()))==null) {continue;}
+	
+	System.out.println("Travel Date (DD-MM-YYYY):");
+	while((travelDate = InputValidator.ValidateDate(br.readLine()))==null) {continue;}
+
+	System.out.println("Class [Economic-E or Business-B]:");
+	while((flightClass = InputValidator.ValidateClass(br.readLine()))==null) {continue;}
+	
+	System.out.println("Output Preference :");
+	while((outputPreference = InputValidator.ValidatePreference(Integer.parseInt(br.readLine()))) == 0) {continue;}
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+	return new UserInput(source, destination, travelDate, flightClass, outputPreference);
+	
+}
+
+}
