@@ -33,9 +33,8 @@ public class DirectoryReader {
 		try {
 			reader = new CSVReaderBuilder(new FileReader(file)).withSkipLines(1).withCSVParser(parser).build();
 			 List<String[]> allData = reader.readAll();
-			 
 			 for (String[] row : allData) {
-				 Flight f = new Flight();
+				 Flight f = null;
 				 f.setFlightNo(row[0]);
 				 f.setDepLoc(row[1]);
 				 f.setArrLoc(row[2]);
@@ -48,16 +47,7 @@ public class DirectoryReader {
 				 f.setValidTill(validTill);
 				 f.setFlightTime(row[4]);
 				 f.setFlightDuration(Double.parseDouble(row[5]));
-				 f.setFare(Integer.parseInt(row[6]));
-				 String avail = row[7];
-					Boolean seatAvailability;
-					if (avail.charAt(0) == 'Y') {
-						seatAvailability = true;
-					} else {
-						seatAvailability = false;
-					}
-					f.setSeatAvailability(seatAvailability);
-					f.setFlightClass(row[8]);
+				 
 				 flightSet.add(f);
 				 
 			 }
@@ -76,37 +66,37 @@ public class DirectoryReader {
 
 	}
 
-//	private static Flight manipulateLine(String line) {
-//		StringTokenizer st = new StringTokenizer(line, "|");
-////use CSV reader
-//		String flightNo = st.nextToken();
-//		String depLoc = st.nextToken();
-//		String arrLoc = st.nextToken();
-//
-//		String validTillDate = st.nextToken();
-//		Date validTill = new Date();
-//		try {
-//			validTill = dateformat.parse(validTillDate);
-//		} catch (ParseException e) {
-//			System.err.print("Date not in appropriate(dd-MM-yyyy) format");
-//		}
-//
-//		String flightTime = st.nextToken();
-//		Double flightDuration = Double.parseDouble(st.nextToken());
-//		int fare = Integer.parseInt(st.nextToken());
-//
-//		String avail = st.nextToken();
-//		Boolean seatAvailability;
-//		if (avail.charAt(0) == 'Y') {
-//			seatAvailability = true;
-//		} else {
-//			seatAvailability = false;
-//		}
-//
-//		String flightClass = st.nextToken();
-//
-//		return new Flight(flightNo, depLoc, arrLoc, fare, validTill, flightTime, flightDuration, seatAvailability,
-//				flightClass);
-//	}
+	private static Flight manipulateLine(String line) {
+		StringTokenizer st = new StringTokenizer(line, "|");
+//use CSV reader
+		String flightNo = st.nextToken();
+		String depLoc = st.nextToken();
+		String arrLoc = st.nextToken();
+
+		String validTillDate = st.nextToken();
+		Date validTill = new Date();
+		try {
+			validTill = dateformat.parse(validTillDate);
+		} catch (ParseException e) {
+			System.err.print("Date not in appropriate(dd-MM-yyyy) format");
+		}
+
+		String flightTime = st.nextToken();
+		Double flightDuration = Double.parseDouble(st.nextToken());
+		int fare = Integer.parseInt(st.nextToken());
+
+		String avail = st.nextToken();
+		Boolean seatAvailability;
+		if (avail.charAt(0) == 'Y') {
+			seatAvailability = true;
+		} else {
+			seatAvailability = false;
+		}
+
+		String flightClass = st.nextToken();
+
+		return new Flight(flightNo, depLoc, arrLoc, fare, validTill, flightTime, flightDuration, seatAvailability,
+				flightClass);
+	}
 
 }

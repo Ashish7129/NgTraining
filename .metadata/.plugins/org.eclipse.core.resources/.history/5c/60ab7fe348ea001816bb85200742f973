@@ -105,10 +105,6 @@ public class Flight {
 		}
 	}
 
-	public Flight() {
-		// TODO Auto-generated constructor stub
-	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -158,42 +154,6 @@ public class Flight {
 		} else if (!validTill.equals(other.validTill))
 			return false;
 		return true;
-	}
-
-	public void setFlightNo(String flightNo) {
-		this.flightNo = flightNo;
-	}
-
-	public void setDepLoc(String depLoc) {
-		this.depLoc = depLoc;
-	}
-
-	public void setArrLoc(String arrLoc) {
-		this.arrLoc = arrLoc;
-	}
-
-	public void setValidTill(Date validTill) {
-		this.validTill = validTill;
-	}
-
-	public void setFlightTime(String flightTime) {
-		this.flightTime = flightTime;
-	}
-
-	public void setFlightDuration(Double flightDuration) {
-		this.flightDuration = flightDuration;
-	}
-
-	public void setFare(int fare) {
-		this.fare = fare;
-	}
-
-	public void setSeatAvailability(boolean seatAvailability) {
-		this.seatAvailability = seatAvailability;
-	}
-
-	public void setFlightClass(String flightClass) {
-		this.flightClass = flightClass;
 	}
 
 

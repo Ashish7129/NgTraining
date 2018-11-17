@@ -33,9 +33,8 @@ public class DirectoryReader {
 		try {
 			reader = new CSVReaderBuilder(new FileReader(file)).withSkipLines(1).withCSVParser(parser).build();
 			 List<String[]> allData = reader.readAll();
-			 
 			 for (String[] row : allData) {
-				 Flight f = new Flight();
+				 Flight f = null;
 				 f.setFlightNo(row[0]);
 				 f.setDepLoc(row[1]);
 				 f.setArrLoc(row[2]);

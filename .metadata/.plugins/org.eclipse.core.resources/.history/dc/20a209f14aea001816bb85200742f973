@@ -18,8 +18,6 @@ public class Main {
 
 		// search the flights and show
 		Watcher.watcher();
-		try
-		{
 		results.clear();
 			for (HashSet<Flight> flight_data : DirectoryReader.flightInfo.values()) {
 				for (Flight data : flight_data) {
@@ -39,8 +37,8 @@ public class Main {
 //		if('e' == br.readLine().charAt(0)) 
 //			break;
 //		}
-		}
-		finally {
+//		}
+//		finally {
 			System.out.println(
 					"FLIGHT_NO | DEP_LOC | ARR_LOC | VALID_TILL | FLIGHT_TIME | FLIGHT_DUR | FARE | SEAT_AVAILABILITY | CLASS\r");
 			for (Flight f : results) {
@@ -48,4 +46,4 @@ public class Main {
 			}
 		}
 	}
-}
+
